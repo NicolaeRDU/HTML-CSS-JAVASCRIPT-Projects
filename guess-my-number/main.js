@@ -27,13 +27,6 @@ const setLoose = function (score) {
   }
 };
 
-const asignHighscore = function (highscore) {
-  if (highscore < s) {
-    highscore = s;
-    highscoreEl.textContent = s > highscore ? s : highscore;
-  }
-};
-
 btnSubmit.addEventListener("click", () => {
   const yourChoise = Number(number.value);
 
@@ -57,7 +50,10 @@ btnSubmit.addEventListener("click", () => {
         playing = false;
 
         // Asign the score to highscore, if it is the case
-        asignHighscore(highscore);
+        if (highscore < s) {
+          highscore = s;
+          highscoreEl.textContent = highscore;
+        }
 
         // Clear the input
         number.value = "";
