@@ -1,0 +1,57 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(130deg, #8052ec, #d161ff);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.container {
+  padding: 30px;
+  border: 2px solid #fff;
+}
+
+/* Create tasks area */
+#create--task,
+#tasks--list {
+  padding: 20px 30px;
+  background-color: #fff;
+  border-radius: 5px;
+  min-width: 400px;
+}
+
+#create--task input {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  outline: none;
+}
+
+#create--task button {
+  height: 40px;
+  width: 20%;
+  background-color: #8052ec;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-left: 35px;
+  cursor: pointer;
+}
+
+/* Show the tasks */
+#tasks--list {
+  margin-top: 30px;
+  padding: 30px 40px;
+}
