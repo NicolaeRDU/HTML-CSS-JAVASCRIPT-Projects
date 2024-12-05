@@ -38,7 +38,8 @@ body {
   outline: none;
 }
 
-#create--task button {
+#create--task button,
+#task button {
   height: 40px;
   width: 20%;
   background-color: #8052ec;
@@ -54,4 +55,23 @@ body {
 #tasks--list {
   margin-top: 30px;
   padding: 30px 40px;
+}
+
+/* Task style */
+#task {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #777;
+  padding-bottom: 5px;
+}
+
+#task span {
+  align-self: center;
+}
+
+.completed {
+  text-decoration: line-through;
+  cursor: pointer;
 }
