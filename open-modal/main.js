@@ -6,30 +6,36 @@ const closeModalBtn = document.querySelector(".btn__close--modal");
 const overlayEl = document.querySelector(".overlay");
 const modalEl = document.querySelector(".modal");
 
+const openModal = function () {
+  overlayEl.classList.remove("hidden");
+  modalEl.classList.remove("hidden");
+};
+
+const closeModal = function () {
+  overlayEl.classList.add("hidden");
+  modalEl.classList.add("hidden");
+};
+
 // Open modal
 openModalBtns.forEach((btn) =>
   btn.addEventListener("click", () => {
-    overlayEl.classList.remove("hidden");
-    modalEl.classList.remove("hidden");
+    openModal();
   })
 );
 
 // Close modal
 closeModalBtn.addEventListener("click", () => {
-  overlayEl.classList.add("hidden");
-  modalEl.classList.add("hidden");
+  closeModal();
 });
 
 overlayEl.addEventListener("click", () => {
-  overlayEl.classList.add("hidden");
-  modalEl.classList.add("hidden");
+  closeModal();
 });
 
 // Close modal using Esc button
 document.addEventListener("keydown", (e) => {
   // console.log(e);
   if (e.key === "Escape") {
-    overlayEl.classList.add("hidden");
-    modalEl.classList.add("hidden");
+    closeModal();
   }
 });
