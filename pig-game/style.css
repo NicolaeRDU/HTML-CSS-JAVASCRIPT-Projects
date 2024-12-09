@@ -82,3 +82,8 @@ button:hover {
 .score__body p {
   margin: 0;
 }
+
+/* Active player */
+.active--player {
+  background-color: palevioletred;
+}
