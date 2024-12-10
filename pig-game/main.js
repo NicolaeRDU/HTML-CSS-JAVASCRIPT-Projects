@@ -6,34 +6,51 @@ const player1 = document.querySelector("#player--1");
 const addButton = document.querySelector(".add");
 const standButton = document.querySelector(".stand");
 const resetButton = document.querySelector(".reset");
-const scoreHead = document.querySelector(".score__header");
-const actualScore = document.querySelector(".actual--score");
+const scoreHead0 = document.querySelector("#player--0 .score__header");
+const scoreHead1 = document.querySelector("#player--1 .score__header");
+const actualScore0 = document.querySelector("#player--0 .actual--score");
+const actualScore1 = document.querySelector("#player--1 .actual--score");
 
-let score = 0;
-let scoreMain = 0;
+let score = [0, 0];
+let mainScore = [0, 0];
+let active = 0;
 
-addButton.addEventListener("click", function () {
-  let randomNumber = Math.trunc(Math.random() * 6 + 1);
-  console.log(randomNumber);
+const playerChange = function () {
+  // Reset the score
+  score = [0, 0];
 
-  if (randomNumber === 1) {
-    // Change to next player
-    console.log("Changed player");
-  } else {
-    score += randomNumber;
-    actualScore.textContent = score;
-  }
-});
-
-standButton.addEventListener("click", function () {
-  // Adding the scorte to mainScore and change the text
-  // content for scoreHead
-  scoreMain += score;
-  scoreHead.textContent = scoreMain;
-  score = 0;
-  actualScore.textContent = score;
+  // Changing the active from 1 to 0 and 0 to 1
+  active === 0 ? (active = 1) : (active = 0);
+  actualScore0.textContent = 0;
+  actualScore1.textContent = 0;
 
   // Toggle the active player class
   player0.classList.toggle("active--player");
   player1.classList.toggle("active--player");
+};
+
+// ADD BTN
+addButton.addEventListener("click", function () {
+  // Generate a random number when you press the ADD button
+  let randomNumber = Math.trunc(Math.random() * 6 + 1);
+
+  if (randomNumber !== 1) {
+    score[active] += randomNumber;
+    if (active === 0) actualScore0.textContent = score[active];
+    if (active === 1) actualScore1.textContent = score[active];
+  } else {
+    playerChange();
+  }
+});
+
+// STAND BTN
+standButton.addEventListener("click", function () {
+  // Add the score to the mainScore
+  mainScore[active] += score[active];
+
+  active === 0
+    ? (scoreHead0.textContent = mainScore[active])
+    : (scoreHead1.textContent = mainScore[active]);
+
+  playerChange();
 });
