@@ -14,6 +14,7 @@ const actualScore1 = document.querySelector("#player--1 .actual--score");
 let score = [0, 0];
 let mainScore = [0, 0];
 let active = 0;
+let playing = true;
 
 const playerChange = function () {
   // Reset the score
@@ -27,30 +28,51 @@ const playerChange = function () {
   // Toggle the active player class
   player0.classList.toggle("active--player");
   player1.classList.toggle("active--player");
+
+  if (!playing) {
+    player0.classList.remove("active--player");
+    player1.classList.remove("active--player");
+  }
 };
 
 // ADD BTN
 addButton.addEventListener("click", function () {
-  // Generate a random number when you press the ADD button
-  let randomNumber = Math.trunc(Math.random() * 6 + 1);
+  if (playing) {
+    // Generate a random number when you press the ADD button
+    let randomNumber = Math.trunc(Math.random() * 6 + 1);
 
-  if (randomNumber !== 1) {
-    score[active] += randomNumber;
-    if (active === 0) actualScore0.textContent = score[active];
-    if (active === 1) actualScore1.textContent = score[active];
-  } else {
-    playerChange();
+    if (randomNumber !== 1) {
+      score[active] += randomNumber;
+      if (active === 0) actualScore0.textContent = score[active];
+      if (active === 1) actualScore1.textContent = score[active];
+    } else {
+      playerChange();
+    }
   }
 });
 
 // STAND BTN
 standButton.addEventListener("click", function () {
-  // Add the score to the mainScore
-  mainScore[active] += score[active];
+  if (playing) {
+    if (mainScore[active] < 20) {
+      // Add the score to the mainScore
+      mainScore[active] += score[active];
 
-  active === 0
-    ? (scoreHead0.textContent = mainScore[active])
-    : (scoreHead1.textContent = mainScore[active]);
+      active === 0
+        ? (scoreHead0.textContent = mainScore[active])
+        : (scoreHead1.textContent = mainScore[active]);
+    }
 
-  playerChange();
+    if (mainScore[active] >= 20 && active === 0) {
+      player0.classList.add("winner");
+      playing = false;
+    }
+
+    if (mainScore[active] >= 20 && active === 1) {
+      player1.classList.add("winner");
+      playing = false;
+    }
+
+    playerChange();
+  }
 });
