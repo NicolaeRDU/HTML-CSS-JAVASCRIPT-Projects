@@ -3,9 +3,12 @@
 // Define variables
 const player0 = document.querySelector("#player--0");
 const player1 = document.querySelector("#player--1");
+
 const addButton = document.querySelector(".add");
 const standButton = document.querySelector(".stand");
 const resetButton = document.querySelector(".reset");
+const dice = document.querySelector(".dice");
+
 const scoreHead0 = document.querySelector("#player--0 .score__header");
 const scoreHead1 = document.querySelector("#player--1 .score__header");
 const actualScore0 = document.querySelector("#player--0 .actual--score");
@@ -41,6 +44,10 @@ addButton.addEventListener("click", function () {
     // Generate a random number when you press the ADD button
     let randomNumber = Math.trunc(Math.random() * 6 + 1);
 
+    // Display the dice and change it automatically
+    dice.classList.remove("hidden");
+    dice.src = `images/dice-${randomNumber}.png`;
+
     if (randomNumber !== 1) {
       score[active] += randomNumber;
       if (active === 0) actualScore0.textContent = score[active];
@@ -75,4 +82,26 @@ standButton.addEventListener("click", function () {
 
     playerChange();
   }
+});
+
+// RESET Btn
+resetButton.addEventListener("click", function () {
+  score = [0, 0];
+  mainScore = [0, 0];
+  active = 0;
+  playing = true;
+
+  dice.classList.add("hidden");
+
+  player0.classList.remove("winner");
+  player1.classList.remove("winner");
+
+  player0.classList.add("active--player");
+  player1.classList.remove("active--player");
+
+  scoreHead0.textContent =
+    scoreHead1.textContent =
+    actualScore0.textContent =
+    actualScore1.textContent =
+      0;
 });
