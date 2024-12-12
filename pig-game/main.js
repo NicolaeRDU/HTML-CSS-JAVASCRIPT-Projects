@@ -50,8 +50,10 @@ addButton.addEventListener("click", function () {
 
     if (randomNumber !== 1) {
       score[active] += randomNumber;
-      if (active === 0) actualScore0.textContent = score[active];
-      if (active === 1) actualScore1.textContent = score[active];
+
+      active === 0
+        ? (actualScore0.textContent = score[active])
+        : (actualScore1.textContent = score[active]);
     } else {
       playerChange();
     }
@@ -61,7 +63,7 @@ addButton.addEventListener("click", function () {
 // STAND BTN
 standButton.addEventListener("click", function () {
   if (playing) {
-    if (mainScore[active] < 20) {
+    if (mainScore[active] < 30) {
       // Add the score to the mainScore
       mainScore[active] += score[active];
 
@@ -70,12 +72,12 @@ standButton.addEventListener("click", function () {
         : (scoreHead1.textContent = mainScore[active]);
     }
 
-    if (mainScore[active] >= 20 && active === 0) {
+    if (mainScore[active] >= 30 && active === 0) {
       player0.classList.add("winner");
       playing = false;
     }
 
-    if (mainScore[active] >= 20 && active === 1) {
+    if (mainScore[active] >= 30 && active === 1) {
       player1.classList.add("winner");
       playing = false;
     }
