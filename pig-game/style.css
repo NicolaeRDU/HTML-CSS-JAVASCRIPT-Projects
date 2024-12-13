@@ -14,6 +14,7 @@ body {
   border: 2px solid #000;
   display: flex;
   position: relative;
+  animation: slideInFromTop 1.5s ease-out;
 }
 
 .player--0,
@@ -35,6 +36,7 @@ button {
 
 button:hover {
   background-color: lightgrey;
+  transition: background-color 0.5s;
 }
 
 .reset {
@@ -95,6 +97,7 @@ button:hover {
 /* Hidden class */
 .hidden {
   display: none;
+  transition: display 1s 0.5s;
 }
 
 /* Active player */
@@ -105,4 +108,48 @@ button:hover {
 /* Winner  */
 .winner {
   background-color: goldenrod;
+}
+
+/* ------------------------------------------------ */
+/* Rules section */
+.rules__container {
+  text-align: center;
+}
+
+.rules__container h1 {
+  font-size: 60px;
+}
+.rules__container p {
+  font-size: 25px;
+}
+
+/* Button */
+.play--game {
+  font-size: 20px;
+  padding: 20px 40px;
+  background-color: #e3d6d5;
+}
+
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideOutToTop {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-200%);
+  }
+}
+
+.animation {
+  animation: slideOutToTop 2s ease-in;
 }

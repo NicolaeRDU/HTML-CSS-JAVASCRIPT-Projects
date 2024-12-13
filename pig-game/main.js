@@ -14,10 +14,25 @@ const scoreHead1 = document.querySelector("#player--1 .score__header");
 const actualScore0 = document.querySelector("#player--0 .actual--score");
 const actualScore1 = document.querySelector("#player--1 .actual--score");
 
+const gameContainer = document.querySelector(".container");
+const rulesContainer = document.querySelector(".rules__container");
+const playGame = document.querySelector(".play--game");
+
 let score = [0, 0];
 let mainScore = [0, 0];
 let active = 0;
 let playing = true;
+
+// PLAY Game
+playGame.addEventListener("click", function () {
+  rulesContainer.classList.add("animation");
+  setTimeout(function () {
+    rulesContainer.classList.add("hidden");
+  }, 1800);
+  setTimeout(function () {
+    gameContainer.classList.remove("hidden");
+  }, 2000);
+});
 
 const playerChange = function () {
   // Reset the score
