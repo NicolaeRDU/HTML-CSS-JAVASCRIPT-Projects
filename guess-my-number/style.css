@@ -77,3 +77,7 @@ input.number {
 .hidden {
   display: none;
 }
+
+.winner {
+  background-color: #45a322;
+}

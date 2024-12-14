@@ -57,6 +57,9 @@ btnSubmit.addEventListener("click", () => {
 
         // Clear the input
         number.value = "";
+
+        // Add a winner class
+        document.querySelector("body").classList.add("winner");
       }
     } else if (!yourChoise) {
       text.classList.remove("hidden");
@@ -73,4 +76,5 @@ btnReset.addEventListener("click", () => {
   playing = true;
   showNumber.textContent = "?";
   randomNumber = Math.trunc(Math.random() * 20 + 1);
+  document.querySelector("body").classList.remove("winner");
 });
