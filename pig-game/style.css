@@ -97,7 +97,6 @@ button:hover {
 /* Hidden class */
 .hidden {
   display: none;
-  transition: display 1s 0.5s;
 }
 
 /* Active player */
@@ -152,4 +151,82 @@ button:hover {
 
 .animation {
   animation: slideOutToTop 2s ease-in;
+}
+
+/*
+/////////////////////////////////////////
+/////////////////////////////////////////
+/////////////////////////////////////////
+/////////////////////////////////////////
+*/
+
+/* Responsive part */
+@media only screen and (max-width: 850px) {
+  .container {
+    /* max-width: 600px; */
+    max-height: 800px;
+    display: grid;
+    grid-template-columns: 350px;
+  }
+
+  .player--0,
+  .player--1 {
+    max-height: 400px;
+    max-width: 350px;
+  }
+
+  /* Buttons */
+  .add {
+    position: absolute;
+    bottom: 47.5%;
+    left: 73%;
+  }
+
+  .reset {
+    position: absolute;
+    top: 383px;
+    left: 4%;
+  }
+
+  .stand {
+    position: absolute;
+    bottom: 47.5%;
+    left: 39%;
+  }
+
+  /* Score header */
+  .score__header {
+    /* width: 70px;
+    margin: 0; */
+    transform: translate(50px, 140%);
+    text-align: center;
+  }
+
+  .player--0 .score__header {
+    transform: translate(50px, 82%);
+    text-align: center;
+  }
+
+  /* Score body */
+  .score__body {
+    transform: translate(230%, 50px);
+  }
+
+  .player--0 .score__body {
+    transform: translate(230%, -10px);
+  }
+
+  /* Dice */
+  .dice {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: 32%;
+    left: 40%;
+  }
+
+  /* Hidden */
+  .hidden {
+    display: none;
+  }
 }
