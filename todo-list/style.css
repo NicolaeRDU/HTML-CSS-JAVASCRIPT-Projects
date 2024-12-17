@@ -27,7 +27,12 @@ body {
   padding: 20px 30px;
   background-color: #fff;
   border-radius: 5px;
-  min-width: 400px;
+  min-width: 500px;
+}
+
+#create--task {
+  display: flex;
+  justify-content: space-between;
 }
 
 #create--task input {
@@ -69,6 +74,10 @@ body {
 
 #task span {
   align-self: center;
+}
+
+.task__description {
+  cursor: pointer;
 }
 
 .completed {
