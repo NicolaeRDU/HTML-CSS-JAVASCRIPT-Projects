@@ -76,7 +76,7 @@ h2 {
 .nav__list li a:hover {
   border-bottom: 1px solid var(--secondary-color);
   padding-bottom: 1rem;
-  transition: all 0.4s;
+  /* transition: all 0.4s; */
 }
 
 /* Main */
@@ -113,7 +113,7 @@ h2 {
 .projects {
   background-color: var(--secondary-color);
   color: var(--bg-color);
-  padding-top: 10rem;
+  padding-top: 20rem;
 }
 
 .projects__header {
@@ -126,19 +126,19 @@ h2 {
 }
 
 .projects__header ul li a {
-  color: var(--text-color);
+  color: var(--bg-color);
   font-size: 3rem;
 }
 
-.projects__body h3 {
-  font-size: 3rem;
-  margin-bottom: 2rem;
-  margin-left: 2rem;
+.projects__header ul li a:hover {
+  border-bottom: 2px solid var(--main-color);
+  padding-bottom: 1rem;
+  transition: all 0.3s ease-out;
 }
 
 .projects__body--btn {
   margin-top: 5rem;
-  padding-bottom: 10rem;
+  padding-bottom: 20rem;
   text-align: center;
 }
 
@@ -146,7 +146,36 @@ h2 {
   margin-left: 3rem;
 } */
 
+/* Footer */
+.contact--me {
+  background-color: #000;
+  color: var(--text-color);
+  padding: 20rem 0;
+  line-height: 3.5rem;
+}
+
+.contact--me .email {
+  color: var(--text-color);
+  background-color: var(--main-color);
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  margin-left: 1rem;
+}
+
+/* Links */
+.contact--me .links {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 3rem;
+}
+
 /* Utility classes */
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
 .btn {
   padding: 1.3rem 2rem;
   font-size: 1.6rem;
@@ -158,8 +187,8 @@ h2 {
   cursor: pointer;
 }
 
-.container {
-  max-width: 1300px;
-  margin: 0 auto;
-  padding: 0 15px;
+.header {
+  font-size: 4rem;
+  margin-bottom: 3rem;
+  margin-left: 2rem;
 }
