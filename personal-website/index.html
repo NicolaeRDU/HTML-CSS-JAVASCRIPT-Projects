@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Radu Mihai Nicolae</title>
     <link rel="stylesheet" href="style.css" />
-    <script defer src="main.js"></script>
   </head>
   <body>
     <!-- navbar -->
@@ -19,6 +18,7 @@
         </ul>
       </div>
     </nav>
+
     <!-- main -->
     <section class="main">
       <div class="container">
@@ -34,7 +34,7 @@
             quaerat deleniti, quis optio sequi ad explicabo quibusdam dolor
             tenetur amet!
           </p>
-          <a href="#">Whatch my projects</a>
+          <button class="main__body--projects">Whatch my projects</button>
         </div>
         <div>
           <img
@@ -45,75 +45,118 @@
         </div>
       </div>
     </section>
+
     <!-- projects -->
-    <section class="projects">
+    <section class="projects" id="section--2">
       <div class="container">
-        <div class="projects__header">
-          <ul>
-            <li><a href="#">Project 1</a></li>
-            <li><a href="#">Project 1</a></li>
-            <li><a href="#">Project 1</a></li>
-            <li><a href="#">Project 1</a></li>
-          </ul>
+        <div class="projects__header projects__tab--container">
+          <button
+            class="projects__tab projects__tab--1 btn projects__tab--active"
+            data-tab="1"
+          >
+            Project 1
+          </button>
+
+          <button class="projects__tab projects__tab--2 btn" data-tab="2">
+            Project 2
+          </button>
+
+          <button class="projects__tab projects__tab--3 btn" data-tab="3">
+            Project 3
+          </button>
+
+          <button class="projects__tab projects__tab--4 btn" data-tab="4">
+            Project 4
+          </button>
         </div>
         <div class="projects__body">
-          <h3 class="header">Project name</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. At,
-            accusamus! Deserunt reprehenderit facere libero nihil optio impedit
-            officia expedita esse aliquam magni corporis vel enim perspiciatis
-            sint provident illo dolores dolor asperiores harum dicta, doloremque
-            veniam facilis? Quae voluptatem autem quasi provident illum. Quod
-            adipisci vel accusamus, molestiae quos ad?
-          </p>
-          <div class="projects__body--btn">
-            <button class="btn">
-              <a
-                href="https://chimerical-cupcake-8fc07e.netlify.app/"
-                target="_blank"
-                >Got to project</a
-              >
-            </button>
+          <div
+            class="projects__content projects__content--1 projects__content--active"
+          >
+            <h3 class="header">Growth app</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. At,
+              accusamus! Deserunt reprehenderit facere libero nihil optio
+              impedit officia expedita esse aliquam magni corporis vel enim
+              perspiciatis sint provident illo dolores dolor asperiores harum
+              dicta, doloremque veniam facilis? Quae voluptatem autem quasi
+              provident illum. Quod adipisci vel accusamus, molestiae quos ad?
+            </p>
+            <div class="projects__body--btn">
+              <button class="btn">
+                <a
+                  href="https://growthappformyportofolio.netlify.app/"
+                  target="_blank"
+                  >Got to project</a
+                >
+              </button>
+            </div>
           </div>
-          <!-- <h3>Project name</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. At,
-            accusamus! Deserunt reprehenderit facere libero nihil optio impedit
-            officia expedita esse aliquam magni corporis vel enim perspiciatis
-            sint provident illo dolores dolor asperiores harum dicta, doloremque
-            veniam facilis? Quae voluptatem autem quasi provident illum. Quod
-            adipisci vel accusamus, molestiae quos ad?
-          </p>
-          <div class="projects__body--btn">
-            <button class="btn">Got to project</button>
+
+          <div class="projects__content projects__content--2">
+            <h3 class="header">Booklist app</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. At,
+              accusamus! Deserunt reprehenderit facere libero nihil optio
+              impedit officia expedita esse aliquam magni corporis vel enim
+              perspiciatis sint provident illo dolores dolor asperiores harum
+              dicta, doloremque veniam facilis? Quae voluptatem autem quasi
+              provident illum. Quod adipisci vel accusamus, molestiae quos ad?
+            </p>
+            <div class="projects__body--btn">
+              <button class="btn">
+                <a
+                  href="https://booklistappformyportofolio.netlify.app/"
+                  target="_blank"
+                  >Got to project</a
+                >
+              </button>
+            </div>
           </div>
-          <h3>Project name</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. At,
-            accusamus! Deserunt reprehenderit facere libero nihil optio impedit
-            officia expedita esse aliquam magni corporis vel enim perspiciatis
-            sint provident illo dolores dolor asperiores harum dicta, doloremque
-            veniam facilis? Quae voluptatem autem quasi provident illum. Quod
-            adipisci vel accusamus, molestiae quos ad?
-          </p>
-          <div class="projects__body--btn">
-            <button class="btn">Got to project</button>
+          <div class="projects__content projects__content--3">
+            <h3 class="header">Pig game</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. At,
+              accusamus! Deserunt reprehenderit facere libero nihil optio
+              impedit officia expedita esse aliquam magni corporis vel enim
+              perspiciatis sint provident illo dolores dolor asperiores harum
+              dicta, doloremque veniam facilis? Quae voluptatem autem quasi
+              provident illum. Quod adipisci vel accusamus, molestiae quos ad?
+            </p>
+            <div class="projects__body--btn">
+              <button class="btn">
+                <a
+                  href="https://piggameformyportofolio.netlify.app/"
+                  target="_blank"
+                  >Got to project</a
+                >
+              </button>
+            </div>
           </div>
-          <h3>Project name</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. At,
-            accusamus! Deserunt reprehenderit facere libero nihil optio impedit
-            officia expedita esse aliquam magni corporis vel enim perspiciatis
-            sint provident illo dolores dolor asperiores harum dicta, doloremque
-            veniam facilis? Quae voluptatem autem quasi provident illum. Quod
-            adipisci vel accusamus, molestiae quos ad?
-          </p>
-          <div class="projects__body--btn">
-            <button class="btn">Got to project</button>
-          </div> -->
+          <div class="projects__content projects__content--4">
+            <h3 class="header">Todo list</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. At,
+              accusamus! Deserunt reprehenderit facere libero nihil optio
+              impedit officia expedita esse aliquam magni corporis vel enim
+              perspiciatis sint provident illo dolores dolor asperiores harum
+              dicta, doloremque veniam facilis? Quae voluptatem autem quasi
+              provident illum. Quod adipisci vel accusamus, molestiae quos ad?
+            </p>
+            <div class="projects__body--btn">
+              <button class="btn">
+                <a
+                  href="https://todolistformyportofolio.netlify.app/"
+                  target="_blank"
+                  >Got to project</a
+                >
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
+
     <!-- footer -->
     <footer class="contact--me">
       <div class="container">
@@ -134,5 +177,6 @@
         </div>
       </div>
     </footer>
+    <script src="main.js"></script>
   </body>
 </html>

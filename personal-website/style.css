@@ -113,32 +113,52 @@ h2 {
 .projects {
   background-color: var(--secondary-color);
   color: var(--bg-color);
-  padding-top: 20rem;
+  padding-top: 10rem;
 }
 
+/* header part /////////////////*/
 .projects__header {
   margin-bottom: 10rem;
 }
 
-.projects__header ul {
+.projects__tab--container {
   display: flex;
   justify-content: space-around;
 }
 
-.projects__header ul li a {
-  color: var(--bg-color);
-  font-size: 3rem;
+.projects__tab--container .btn {
+  padding: 1.4rem 4rem;
+  border-radius: 5rem;
+  transition: transform 0.5s;
 }
 
-.projects__header ul li a:hover {
-  border-bottom: 2px solid var(--main-color);
-  padding-bottom: 1rem;
-  transition: all 0.3s ease-out;
+.btn.projects__tab--active {
+  transform: translateY(-2rem);
+  transition: all 0.5s;
+}
+
+/* body part //////////// */
+.projects__body .header {
+  margin-top: 3rem;
+}
+
+.projects__content {
+  display: none;
+}
+
+.projects__container {
+  max-height: 40rem;
+  overflow: hidden;
+}
+
+.projects__content--active {
+  display: block;
+
+  padding-bottom: 20rem;
 }
 
 .projects__body--btn {
   margin-top: 5rem;
-  padding-bottom: 20rem;
   text-align: center;
 }
 
