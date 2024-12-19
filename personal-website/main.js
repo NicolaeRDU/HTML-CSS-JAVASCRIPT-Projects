@@ -2,7 +2,7 @@
 
 // Main section
 const section2 = document.querySelector("#section--2");
-const goToProjects = document.querySelector(".main__body--projects");
+const goToProjects = document.querySelector(".main__btn");
 
 // Projects section
 const tabs = document.querySelectorAll(".projects__tab");
