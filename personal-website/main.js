@@ -1,3 +1,9 @@
+// TODO
+
+// - logo one piece la projects /// optional
+
+// - o noua sectiune de "INTRO" dupa navbar
+
 "use strict";
 
 // Main section
@@ -28,4 +34,15 @@ tabsContainer.addEventListener("click", function (e) {
 // //////////////
 goToProjects.addEventListener("click", function () {
   section2.scrollIntoView({ behavior: "smooth" });
+});
+
+// //////////
+document.querySelector(".nav__list").addEventListener("click", function (e) {
+  e.preventDefault();
+
+  if (e.target.classList.contains("nav__link")) {
+    const id = e.target.getAttribute("href");
+    if (!id) return;
+    document.querySelector(id).scrollIntoView({ behavior: "smooth" });
+  }
 });
