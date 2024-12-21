@@ -71,6 +71,7 @@ h2 {
   font-size: 1.9rem;
   font-weight: 700;
   height: 100%;
+  cursor: pointer;
 }
 
 .nav__list li a:hover {
@@ -81,7 +82,25 @@ h2 {
 
 /* INTRO */
 .intro {
-  height: 80rem;
+  height: 60rem;
+  display: grid;
+  grid-template-columns: 100%;
+  text-align: center;
+  margin-bottom: 30rem;
+  margin-top: 25rem;
+}
+
+/* .intro .container {
+  animation: 1s ease-in-out fadeIn;
+} */
+
+.intro p {
+  transform: translateY(7rem);
+}
+
+.intro p i {
+  margin-left: 1rem;
+  animation: 2s infinite bounce;
 }
 
 /* Main */
@@ -91,15 +110,11 @@ h2 {
 
 .main .container {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1.5fr 1fr;
   gap: 3rem;
   /* margin-top: 10rem; */
-  padding-top: 12rem;
+  padding-top: 10rem;
   padding-bottom: 10rem;
-}
-
-.main__body {
-  border: 2px solid blueviolet;
 }
 
 .main__body h2 {
@@ -108,12 +123,29 @@ h2 {
 
 .main__body p {
   /* border: 2px solid blueviolet; */
-  margin-bottom: 10rem;
+  margin-bottom: 3rem;
+}
+
+.main__body p span {
+  margin-left: 2rem;
+  position: relative;
+}
+
+.main__body p span::before {
+  content: "";
+  position: absolute;
+  height: 0.7rem;
+  width: 0.7rem;
+  background-color: #000;
+  border-radius: 60%;
+  top: 7.5px;
+  left: -20px;
 }
 
 .main__image {
-  width: 50rem;
-  height: 50rem;
+  width: 45rem;
+  height: 57.4rem;
+  border-radius: 3rem;
 }
 
 .main__btn {
@@ -143,8 +175,8 @@ h2 {
 .projects {
   background-color: var(--secondary-color);
   color: var(--bg-color);
-  height: 100rem;
-  padding-top: 20rem;
+  height: 110rem;
+  padding-top: 15rem;
 }
 
 /* header part /////////////////*/
@@ -258,14 +290,40 @@ h2 {
   font-weight: bold;
   border: none;
   border-radius: 1rem;
-  /* background-color: var(--bg-color); */
   background-color: var(--main-color);
   color: #fff;
   cursor: pointer;
+}
+
+.animation {
+  animation: 1s ease-in-out fadeIn;
+}
+
+.hidden {
+  display: none;
 }
 
 .header {
   font-size: 4rem;
   margin-bottom: 3rem;
   margin-left: 2rem;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(-7px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
