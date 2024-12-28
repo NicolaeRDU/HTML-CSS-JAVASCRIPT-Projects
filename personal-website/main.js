@@ -1,7 +1,3 @@
-// TODO
-
-// - logo one piece la projects /// optional
-
 "use strict";
 
 // Intro
@@ -14,9 +10,9 @@ const typedTextSpan = document.querySelector(".typed-text");
 
 const words = [
   "a Junior Web Developer",
+  "a person who wants to learn more",
   "a chill guy",
   "a gamer",
-  "a weeb",
   "an One Piece fan",
 ];
 const typingDelay = 100;
@@ -81,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (words.length) {
       setTimeout(type, newLetterDelay);
     }
-  }, 5000);
+  }, 4000);
 });
 
 function type() {

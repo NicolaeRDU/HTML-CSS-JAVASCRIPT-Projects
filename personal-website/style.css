@@ -111,7 +111,7 @@ h2 {
 .main .container {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
-  gap: 3rem;
+  gap: 5rem;
   /* margin-top: 10rem; */
   padding-top: 10rem;
   padding-bottom: 10rem;
@@ -144,7 +144,7 @@ h2 {
 
 .main__image {
   width: 45rem;
-  height: 57.4rem;
+  height: 57.7rem;
   border-radius: 3rem;
 }
 
@@ -154,7 +154,7 @@ h2 {
   align-self: center;
 }
 
-.main__btn button {
+/* .main__btn button {
   padding: 1rem 2rem;
   border: none;
   border-radius: 5rem;
@@ -169,7 +169,7 @@ h2 {
   background-color: #334765;
   color: #e2dbd0;
   transition: all 0.3s;
-}
+} */
 
 /* Projects */
 .projects {
@@ -236,11 +236,13 @@ h2 {
   text-align: center;
 }
 
-.projects__body--btn .btn {
+.projects__body--btn .btn,
+.main__btn .btn {
   transition: all 0.5s;
 }
 
-.projects__body--btn .btn:hover {
+.projects__body--btn .btn:hover,
+.main__btn .btn:hover {
   padding-left: 3rem;
   padding-right: 3rem;
   transition: all 0.5s;
@@ -258,7 +260,7 @@ h2 {
 #contact--me {
   background-color: #000;
   color: var(--text-color);
-  padding: 20rem 0 30rem 0;
+  padding: 20rem 0 25rem 0;
   line-height: 3.5rem;
 }
 
@@ -270,11 +272,31 @@ h2 {
   margin-left: 1rem;
 }
 
+#contact--me img {
+  width: 450px;
+  height: 300px;
+  border-radius: 1rem;
+}
+
 /* Links */
 #contact--me .links {
+  margin-top: 5rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 3rem;
+}
+
+#contact--me i {
+  margin-right: 1rem;
+  margin-top: 2.5rem;
+}
+
+#contact--me a i {
+  color: #fff;
+}
+
+#contact--me .icons {
+  display: block;
 }
 
 /* Utility classes */
