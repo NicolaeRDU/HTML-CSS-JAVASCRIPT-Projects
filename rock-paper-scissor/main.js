@@ -1,5 +1,7 @@
 "use strict";
 
+const body = document.querySelector("body");
+
 const rockBtn = document.querySelector(".rock");
 const paperBtn = document.querySelector(".paper");
 const scissorBtn = document.querySelector(".scissor");
@@ -20,9 +22,11 @@ function generateValue() {
   return valueAI;
 }
 
-let win = 0;
-let tie = 0;
-let loose = 0;
+const score = {
+  win: 0,
+  tie: 0,
+  loose: 0,
+};
 
 // play game function
 function playGame(value) {
@@ -33,47 +37,55 @@ function playGame(value) {
   if (value === "rock") {
     if (valueAI === value) {
       result = `Computer choose ${valueAI}; Tie`;
-      tie++;
+      score["tie"]++;
     } else if (valueAI !== value) {
       valueAI === "paper"
         ? (result = `Computer choose ${valueAI}; You loose`)
         : (result = `Computer choose ${valueAI}; You win`);
 
-      valueAI === "paper" ? loose++ : win++;
+      valueAI === "paper" ? score["loose"]++ : score["win"]++;
     }
   }
 
   if (value === "paper") {
     if (valueAI === value) {
       result = `Computer choose ${valueAI}; Tie`;
-      tie++;
+      score["tie"]++;
     } else if (valueAI !== value) {
       valueAI === "rock"
         ? (result = `Computer choose ${valueAI}; You win`)
         : (result = `Computer choose ${valueAI}; You loose`);
 
-      valueAI === "rock" ? win++ : loose++;
+      valueAI === "rock" ? score["win"]++ : score["loose"]++;
     }
   }
 
   if (value === "scissor") {
     if (valueAI === value) {
       result = `Computer choose ${valueAI}; Tie`;
-      tie++;
+      score["tie"]++;
     } else if (valueAI !== value) {
       valueAI === "rock"
         ? (result = `Computer choose ${valueAI}; You loose`)
         : (result = `Computer choose ${valueAI}; You win`);
 
-      valueAI === "rock" ? loose++ : win++;
+      valueAI === "rock" ? score["loose"]++ : score["win"]++;
     }
+  }
+
+  if (result.includes("Tie")) {
+    body.style.backgroundColor = "#deac23";
+  } else if (result.includes("win")) {
+    body.style.backgroundColor = "#29c718";
+  } else if (result.includes("loose")) {
+    body.style.backgroundColor = "#b31b1b";
   }
 
   text.innerHTML = result;
 
-  winSection.textContent = win;
-  looseSection.textContent = loose;
-  tieSection.textContent = tie;
+  winSection.textContent = score["win"];
+  looseSection.textContent = score["loose"];
+  tieSection.textContent = score["tie"];
 }
 
 // ROCK BTN
