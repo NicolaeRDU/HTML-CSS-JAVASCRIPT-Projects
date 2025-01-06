@@ -22,7 +22,7 @@ function generateValue() {
   return valueAI;
 }
 
-const score = {
+let score = {
   win: 0,
   tie: 0,
   loose: 0,
@@ -34,6 +34,7 @@ function playGame(value) {
   let result = "";
   text.classList.remove("hidden");
 
+  // If I pick ROCK
   if (value === "rock") {
     if (valueAI === value) {
       result = `Computer choose ${valueAI}; Tie`;
@@ -47,6 +48,7 @@ function playGame(value) {
     }
   }
 
+  // If I pick PAPER
   if (value === "paper") {
     if (valueAI === value) {
       result = `Computer choose ${valueAI}; Tie`;
@@ -60,6 +62,7 @@ function playGame(value) {
     }
   }
 
+  // If I pick SCISSOR
   if (value === "scissor") {
     if (valueAI === value) {
       result = `Computer choose ${valueAI}; Tie`;
@@ -73,6 +76,7 @@ function playGame(value) {
     }
   }
 
+  // Change the color for every situation
   if (result.includes("Tie")) {
     body.style.backgroundColor = "#deac23";
   } else if (result.includes("win")) {
@@ -81,12 +85,30 @@ function playGame(value) {
     body.style.backgroundColor = "#b31b1b";
   }
 
+  // Show the text
   text.innerHTML = result;
 
+  // Change the win/loose/tie score
   winSection.textContent = score["win"];
   looseSection.textContent = score["loose"];
   tieSection.textContent = score["tie"];
+
+  localStorage.setItem("score", JSON.stringify(score));
 }
+
+// Function to show the SCORE from local storage
+function loadScore() {
+  const savedScore = localStorage.getItem("score");
+  if (savedScore) {
+    score = JSON.parse(savedScore);
+
+    winSection.textContent = score["win"];
+    looseSection.textContent = score["loose"];
+    tieSection.textContent = score["tie"];
+  }
+}
+
+window.addEventListener("load", loadScore);
 
 // ROCK BTN
 rockBtn.addEventListener("click", function () {
