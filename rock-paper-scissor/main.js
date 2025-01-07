@@ -11,6 +11,8 @@ const winSection = document.querySelector(".win");
 const tieSection = document.querySelector(".tie");
 const looseSection = document.querySelector(".loose");
 
+const reset = document.querySelector(".reset");
+
 // Computer choose a number
 function generateValue() {
   let randomNumber = Number(Math.random().toFixed(2));
@@ -123,4 +125,23 @@ paperBtn.addEventListener("click", function () {
 // SCISSOR BTN
 scissorBtn.addEventListener("click", function () {
   playGame(scissorBtn.value);
+});
+
+// RESET BTN
+reset.addEventListener("click", function () {
+  score = {
+    win: 0,
+    tie: 0,
+    loose: 0,
+  };
+
+  // Show the text
+  text.innerHTML = "Select an item";
+
+  // Change the win/loose/tie score
+  winSection.textContent = score["win"];
+  looseSection.textContent = score["loose"];
+  tieSection.textContent = score["tie"];
+
+  body.style.backgroundColor = " #5d99e8";
 });
